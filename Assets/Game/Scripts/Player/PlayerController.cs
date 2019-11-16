@@ -62,6 +62,7 @@ namespace Player
 		private void FixedUpdate()
 		{
 			// Move our character
+			// ReSharper disable once Unity.PerformanceCriticalCodeInvocation
 			Move(_horizontalMove * Time.fixedDeltaTime, _mWasCrouching, _jump);
 			_jump = false;
 		
@@ -70,19 +71,17 @@ namespace Player
 
 			// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 			// This can be done using layers instead but Sample Assets will not overwrite your project settings.
-			Collider2D[] colliders = Physics2D.OverlapCircleAll(mGroundCheck.position, KGroundedRadius, mWhatIsGround);
-			for (int i = 0; i < colliders.Length; i++)
+			var collider2Ds = Physics2D.OverlapCircleAll(mGroundCheck.position, KGroundedRadius, mWhatIsGround);
+			foreach (var t in collider2Ds)
 			{
-				if (colliders[i].gameObject != gameObject)
-				{
-					_mGrounded = true;
-					if (!wasGrounded)
-						onLandEvent.Invoke();
-				}
+				if (t.gameObject == gameObject) continue;
+				_mGrounded = true;
+				if (!wasGrounded)
+					onLandEvent.Invoke();
 			}
 		}
-		
-		public void Move(float move, bool crouch, bool jump)
+
+		private void Move(float move, bool crouch, bool jump)
 		{
 			// If crouching, check to see if the character can stand up
 			if (!crouch)
@@ -127,9 +126,10 @@ namespace Player
 				}
 
 				// Move the character by finding the target velocity
-				Vector3 targetVelocity = new Vector2(move * 10f, _mRigidbody2D.velocity.y);
+				var velocity = _mRigidbody2D.velocity;
+				Vector3 targetVelocity = new Vector2(move * 10f, velocity.y);
 				// And then smoothing it out and applying it to the character
-				_mRigidbody2D.velocity = Vector3.SmoothDamp(_mRigidbody2D.velocity, targetVelocity, ref _mVelocity, mMovementSmoothing);
+				_mRigidbody2D.velocity = Vector3.SmoothDamp(velocity, targetVelocity, ref _mVelocity, mMovementSmoothing);
 
 				// If the input is moving the player right and the player is facing left...
 				if (move > 0 && !_mFacingRight)

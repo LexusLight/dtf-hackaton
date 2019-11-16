@@ -14,6 +14,16 @@
             <e p="RedistInstall.cs" t="Include" />
           </e>
         </e>
+        <e p="Game" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Player" t="Include">
+              <e p="PlayerController.cs" t="Include" />
+            </e>
+            <e p="Steam" t="Include">
+              <e p="SteamManager.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="Steamworks.NET" t="Include">
             <e p="autogen" t="Include">
@@ -150,14 +160,6 @@
                 <e p="SteamLeaderboardEntries_t.cs" t="Include" />
               </e>
             </e>
-          </e>
-        </e>
-        <e p="Scripts" t="Include">
-          <e p="Player" t="Include">
-            <e p="PlayerController.cs" t="Include" />
-          </e>
-          <e p="Steam" t="Include">
-            <e p="SteamManager.cs" t="Include" />
           </e>
         </e>
         <e p="Standalone" t="Include">
