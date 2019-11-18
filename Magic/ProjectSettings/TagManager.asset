@@ -7,6 +7,8 @@ TagManager:
   - Block
   - Wall
   - Potion
+  - Meat
+  - Imagelvl
   layers:
   - Default
   - TransparentFX

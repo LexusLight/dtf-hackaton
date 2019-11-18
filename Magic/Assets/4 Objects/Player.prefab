@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1047646255601833172}
   - component: {fileID: 1047646255601833174}
   - component: {fileID: 1047646255601833173}
+  - component: {fileID: 5262588496470488967}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -59,7 +60,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -96,6 +97,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TexturePixelsPerWorldUnit: 32
+--- !u!82 &5262588496470488967
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047646255601833175}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: af3cfe75dba8f6a4a9fdd5eb48ea33cc, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1047646255995622108
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +206,7 @@ GameObject:
   - component: {fileID: 1047646255995622098}
   - component: {fileID: 1047646255995622099}
   - component: {fileID: 1047646255995622103}
+  - component: {fileID: 5063065523155321046}
   - component: {fileID: 1047646255995622102}
   m_Layer: 0
   m_Name: Player
@@ -237,6 +335,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &5063065523155321046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047646255995622108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e74a0221b541e4fae3a9322401051c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objct:
+  - {fileID: 5640480069535230626, guid: b4e52071c8bf75543ba3802c1e78b8ea, type: 3}
+  - {fileID: 5640480069535230626, guid: b4e52071c8bf75543ba3802c1e78b8ea, type: 3}
+  - {fileID: 5640480069535230626, guid: b4e52071c8bf75543ba3802c1e78b8ea, type: 3}
 --- !u!61 &1047646255995622102
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -253,7 +367,7 @@ BoxCollider2D:
   m_Offset: {x: -0.014521688, y: -0.25370085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8431746903352918540}
   - component: {fileID: 8431746903352918528}
   - component: {fileID: 8431746903352918543}
+  - component: {fileID: 4390704454486146083}
   m_Layer: 0
   m_Name: flag
   m_TagString: Untagged
@@ -95,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.016782999, y: -0.07048845}
+  m_Offset: {x: 0.015070438, y: -0.4798522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -106,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24141073, y: 0.8590231}
+  m_Size: {x: 0.7997894, y: 0.55414104}
   m_EdgeRadius: 0
 --- !u!114 &8431746903352918528
 MonoBehaviour:
@@ -141,3 +142,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4390704454486146083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8431746903352918539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad27b8b2a079c74dac32d34784c604d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumScene: 0

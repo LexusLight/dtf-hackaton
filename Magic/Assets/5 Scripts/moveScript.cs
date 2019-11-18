@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class moveScript : MonoBehaviour
 {
@@ -36,7 +37,6 @@ public class moveScript : MonoBehaviour
          {
             Instantiate(Colba, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
             Hero.SetBool("Attack", true);
-            Character.combination = 0;
             StartCoroutine(waitAttack());
          }
         if (!Hero.GetBool("Attack"))
