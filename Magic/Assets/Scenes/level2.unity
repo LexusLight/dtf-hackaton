@@ -34864,6 +34864,32 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2079529311}
+    - target: {fileID: 2605832262792923776, guid: d09e9949cfa78b945820532e5b78728a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605832263810654999, guid: d09e9949cfa78b945820532e5b78728a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -45.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158680284479797076, guid: d09e9949cfa78b945820532e5b78728a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605832263810654996, guid: d09e9949cfa78b945820532e5b78728a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605832263810654998, guid: d09e9949cfa78b945820532e5b78728a,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300088, guid: efcb8f28cb990214bad4ceae2322c535,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d09e9949cfa78b945820532e5b78728a, type: 3}
 --- !u!1001 &4477892729071540684
