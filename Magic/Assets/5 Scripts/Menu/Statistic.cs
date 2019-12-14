@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Statistic : MonoBehaviour
 {
+    public static int LvlDone = 2;
     static public int lvl;
+    void Awake()
+    {
+        LvlDone = (PlayerPrefs.GetInt("lvl")==0)? 2 : PlayerPrefs.GetInt("lvl");
+    }
+
     private void Start()
     {
-        lvl = Character.LvlDone;
+        lvl = LvlDone;
         GameObject[] Mass = GameObject.FindGameObjectsWithTag("Point");
         foreach (GameObject item in Mass)
         {
@@ -36,6 +43,8 @@ public class Statistic : MonoBehaviour
                 item.GetComponent<Animator>().SetBool("Choised", true);
                 MenuCamera.pointX = item.transform.position.x;
                 MenuCamera.pointY = item.transform.position.y;
+                GameObject.Find("Text1").GetComponent<Text>().text = item.GetComponent<MenuPoint>().NameLvl;
+                
             }
         }
     }

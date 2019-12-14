@@ -237,3 +237,4 @@ D:\GitHub\dtf-hackaton\Magic\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.
 D:\GitHub\dtf-hackaton\Magic\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\GitHub\dtf-hackaton\Magic\obj\Debug\Assembly-CSharp.dll
 D:\GitHub\dtf-hackaton\Magic\obj\Debug\Assembly-CSharp.pdb
+D:\GitHub\dtf-hackaton\Magic\Temp\bin\Debug\UnityEngine.SpatialTrackingModule.dll

@@ -9,14 +9,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 659470054161432683}
+  - component: {fileID: 8737671759748285642}
   - component: {fileID: 659470054161432682}
   - component: {fileID: 659470054161432680}
   - component: {fileID: 7803041218848301121}
   - component: {fileID: 5324133605700285380}
-  - component: {fileID: 8737671759748285642}
+  - component: {fileID: 50689603549747480}
   m_Layer: 0
   m_Name: Spell (2)
-  m_TagString: Untagged
+  m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +36,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8737671759748285642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659470054161432660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412007a0d6427d84ca3c905260b504c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obj: 0
+  Type: 1
+  Table: {fileID: 0}
 --- !u!212 &659470054161432682
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -114,8 +130,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5c31f14b678d34899e47805afc5ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 4
-  y: 8
+  x: 3
+  y: 6
 --- !u!61 &5324133605700285380
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -142,16 +158,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.47307062, y: 0.46899343}
   m_EdgeRadius: 0
---- !u!114 &8737671759748285642
-MonoBehaviour:
+--- !u!50 &50689603549747480
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659470054161432660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 412007a0d6427d84ca3c905260b504c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Type: 1
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 10
+  m_LinearDrag: 1
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

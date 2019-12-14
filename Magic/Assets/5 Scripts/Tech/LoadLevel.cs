@@ -10,12 +10,17 @@ public class LoadLevel : MonoBehaviour
     public int number;
     public void Load(int level)
     {
-        Character.combination = 0;
+        Character.combination = new int[3]; ;
+        Statistic.LvlDone = level;
         StartCoroutine(NextLevel(level));
+    }
+    public void Exit()
+    {
+        Application.Quit();
     }
     private void Start()
     {
-        Character.combination = 0;
+        Character.combination = new int[3]; ;
         if (black)
         {
             StartCoroutine(ThisLevel());

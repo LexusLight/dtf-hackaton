@@ -11,7 +11,7 @@ public class NextLevel : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Character.combination = 0;
+            Character.combination = new int[3];
             StartCoroutine(NextLevel1());
         }
     }
@@ -22,6 +22,16 @@ public class NextLevel : MonoBehaviour
         {
             image.color = new Color(0, 0, 0, bright);
             yield return new WaitForSeconds(0.005f);
+        }
+        if (PlayerPrefs.GetInt("lvl") < 1)
+        {
+            PlayerPrefs.SetInt("lvl", 2);
+            PlayerPrefs.Save();
+        }
+        if (PlayerPrefs.GetInt("lvl") == Statistic.LvlDone)
+        {
+            PlayerPrefs.SetInt("lvl", Statistic.LvlDone+1);
+            PlayerPrefs.Save();
         }
         SceneManager.LoadScene(NumScene);//внимание
     }

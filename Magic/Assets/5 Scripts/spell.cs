@@ -19,8 +19,8 @@ public class spell : MonoBehaviour
     void Start()
     {
         Ch = GameObject.Find("Player").GetComponent<Character>();
-        TypePotion = Character.combination;
-        Character.combination = 0;
+        TypePotion = Character.combination[Character.pointer];
+        Character.combination[Character.pointer] = 0;
         SpellItem.Check();
         Hero = GameObject.Find("Player").GetComponent<Animator>();
         Potion = GameObject.FindGameObjectWithTag("Potion").GetComponent<Animator>();
@@ -39,6 +39,13 @@ public class spell : MonoBehaviour
             case 4:
                 PotionImage.color = Color.yellow;//255, 20, 94,1 Толкание
                 break;
+            case 5:
+                PotionImage.color = new Color(1f, 0.6f, 0f);
+                break;
+            case 6:
+                PotionImage.color = new Color(0f, 0.7f, 1f);
+                break;
+
         }
         Rigi = GetComponent<Rigidbody2D>();
         Potion.SetBool("SlotYes", false);
@@ -65,7 +72,7 @@ public class spell : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Block") && CanDo)
+        if ((collision.CompareTag("Block")|| collision.CompareTag("Meat") || collision.CompareTag("Potion")) && CanDo)
         {
             gameObject.GetComponent<Animator>().SetBool("Broke",true);
             CanDo = false;
@@ -88,6 +95,16 @@ public class spell : MonoBehaviour
                     collision.gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * maxSpeed*10, ForceMode2D.Impulse);
                     StartCoroutine(WaitStatic(collision));
                     break;
+                case 5://магнит
+                    collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                    collision.gameObject.GetComponent<Rigidbody2D>().AddForce(-Direction * maxSpeed * 10, ForceMode2D.Impulse);
+                    StartCoroutine(WaitStatic(collision));
+                    break;
+                case 6://магнит
+                    collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                    collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(collision.gameObject.GetComponent<SpriteRenderer>().color.r, collision.gameObject.GetComponent<SpriteRenderer>().color.g, collision.gameObject.GetComponent<SpriteRenderer>().color.b, 0.5f);
+                    collision.gameObject.tag = "Ghost";
+                break;
             }
         }
     }
@@ -95,7 +112,7 @@ public class spell : MonoBehaviour
     IEnumerator WaitStatic(Collider2D Col) 
     {
         StartCoroutine(WaitDestroy());
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.7f);
         Col.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Col.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }
