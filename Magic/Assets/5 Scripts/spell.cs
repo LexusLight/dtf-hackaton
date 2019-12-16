@@ -23,7 +23,7 @@ public class spell : MonoBehaviour
         Character.combination[Character.pointer] = 0;
         SpellItem.Check();
         Hero = GameObject.Find("Player").GetComponent<Animator>();
-        Potion = GameObject.FindGameObjectWithTag("Potion").GetComponent<Animator>();
+        Potion = GameObject.Find("Slot123").GetComponent<Animator>();
         PotionImage = GetComponent<SpriteRenderer>();
         switch (TypePotion)
         {
@@ -48,7 +48,7 @@ public class spell : MonoBehaviour
 
         }
         Rigi = GetComponent<Rigidbody2D>();
-        Potion.SetBool("SlotYes", false);
+        Potion.SetInteger("Slot", 0);
         switch (Hero.GetInteger("Vector"))
         {
             case 1:

@@ -24,17 +24,27 @@ public class moveScript : MonoBehaviour
         Rigidbody = GetComponent<Rigidbody2D>();
         //Hero = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
-        JStick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>();
+        try{JStick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>(); } catch{ } ;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //moveX = Input.GetAxis("Horizontal");
-        //moveY = Input.GetAxis("Vertical");
+        if(Statistic.Joyst == 1)
+        {
+        moveX = Input.GetAxis("Horizontal");
+        moveY = Input.GetAxis("Vertical");
+        }
+        else
+        {
         moveX = JStick.Horizontal;
         moveY = JStick.Vertical;
+        }
 
+        if ((Input.GetAxis("Fire1") > 0 || Input.GetAxis("Fire2") > 0 || Input.GetAxis("Fire3") > 0) && Statistic.Joyst == 1)
+        {
+            Throw();
+        }
 
         if (Input.GetKeyDown(KeyCode.Space))
          {

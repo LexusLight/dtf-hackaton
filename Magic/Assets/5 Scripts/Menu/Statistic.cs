@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class Statistic : MonoBehaviour
 {
+    public static int Joyst = 0; 
     public static int LvlDone = 2;
     static public int lvl;
+    static public int thislvl;
     void Awake()
     {
         LvlDone = (PlayerPrefs.GetInt("lvl")==0)? 2 : PlayerPrefs.GetInt("lvl");
+        Joyst = PlayerPrefs.GetInt("Joyst");
     }
 
     private void Start()

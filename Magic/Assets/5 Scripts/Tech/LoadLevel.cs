@@ -8,11 +8,18 @@ public class LoadLevel : MonoBehaviour
 {
     public bool black = true;
     public int number;
-    public void Load(int level)
+    public void Load()
     {
         Character.combination = new int[3]; ;
-        Statistic.LvlDone = level;
-        StartCoroutine(NextLevel(level));
+        Statistic.LvlDone = Statistic.thislvl;
+        Character.hp = 3;
+        StartCoroutine(NextLevel(Statistic.thislvl));
+    }
+    public void LoadFromMenu(int lvl) {
+        Character.combination = new int[3]; ;
+        Statistic.LvlDone = lvl;
+        Character.hp = 3;
+        StartCoroutine(NextLevel(lvl));
     }
     public void Exit()
     {

@@ -14,7 +14,7 @@ public class SpellItem : MonoBehaviour
     private void Start()
     {
         Col = gameObject.GetComponent<BoxCollider2D>();
-        Potion = GameObject.FindGameObjectWithTag("Potion");
+        Potion = GameObject.Find("Slot123");
         Image = Potion.GetComponent<Image>();
     }
 
@@ -33,33 +33,43 @@ public class SpellItem : MonoBehaviour
                     Character.combination[i] = Type;
                     switch (Character.combination[i])
                     {
-                    case 1:
+                    case 1:                      
+                        Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                         Image.color = Color.red;//255, 20, 94,1 уничтожение
-                        break;
+                            break;
                     case 2:
+                        Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                         Image.color = Color.green;//255, 20, 94,1 добавление
-                        break;
+                            
+                            break;
                     case 3:
+                        Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                         Image.color = Color.magenta;//255, 20, 94,1 Превращение
-                        break;
+                            
+                            break;
                     case 4:
+                        Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                         Image.color = Color.yellow;//255, 20, 94,1 Толкание
-                        break;
+
+                            break;
                     case 5:
+                        Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                         Image.color = new Color(1f, 0.6f, 0f);
-                        //Image.color = new Color(255, 108, 0); //255, 20, 94,1 Магнит
-                        break;
+                            //Image.color = new Color(255, 108, 0); //255, 20, 94,1 Магнит
+                            
+                            break;
                     case 6:
+                        Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                         Image.color = new Color(0f, 0.7f, 1f);
-                        break;
+                        
+                            break;
                     case 0:
                         Image.color = Color.white;
                         break;
                     }
+                    GameObject.Find("Pointer").GetComponent<Text>().text = (Character.pointer + 1).ToString();
                 }
             catch { }
-
-            Potion.GetComponent<Animator>().SetBool("SlotYes", true);
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             try { StartCoroutine(DestroyTable()); } catch { }
                 break;
@@ -75,31 +85,36 @@ public class SpellItem : MonoBehaviour
 
     public static void PointerColor()
     {
-        Potion.GetComponent<Animator>().SetBool("SlotYes", true);
         switch (Character.combination[Character.pointer])
         {
             case 1:
                 Image.color = Color.red;//255, 20, 94,1 уничтожение
+                Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                 break;
             case 2:
                 Image.color = Color.green;//255, 20, 94,1 добавление
+                Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                 break;
             case 3:
                 Image.color = Color.magenta;//255, 20, 94,1 Превращение
+                Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                 break;
             case 4:
                 Image.color = Color.yellow;//255, 20, 94,1 Толкание
+                Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                 break;
             case 5:
                 Image.color = new Color(1f, 0.6f, 0f);
+                Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                 //Image.color = new Color(255, 108, 0); //255, 20, 94,1 Магнит
                 break;
             case 6:
                 Image.color = new Color(0f, 0.7f, 1f);
+                Potion.GetComponent<Animator>().SetInteger("Slot", 1);
                 break;
             case 0:
                 Image.color = Color.white;
-                Potion.GetComponent<Animator>().SetBool("SlotYes", false);
+                Potion.GetComponent<Animator>().SetInteger("Slot", 0);
                 break;
         }
     }

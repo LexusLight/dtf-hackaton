@@ -12,6 +12,7 @@ public class NextLevel : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Character.combination = new int[3];
+            Character.hp = 3;
             StartCoroutine(NextLevel1());
         }
     }

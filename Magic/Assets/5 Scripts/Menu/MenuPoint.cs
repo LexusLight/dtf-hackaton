@@ -19,8 +19,9 @@ public class MenuPoint : MonoBehaviour
     {
         if (Id > Statistic.lvl) return;
         Text1.text = NameLvl;
+        Statistic.thislvl = Id;
         if (Image.GetBool("Choised")){
-            LevelMananger.GetComponent<LoadLevel>().Load(Id);
+            LevelMananger.GetComponent<LoadLevel>().LoadFromMenu(Id);
         }
         GameObject[] Mass = GameObject.FindGameObjectsWithTag("Point");
         MenuCamera.pointX = transform.position.x;
