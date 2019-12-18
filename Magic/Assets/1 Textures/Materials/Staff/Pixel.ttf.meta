@@ -3,20 +3,20 @@ guid: 15700d7998009c34a85e82718fbec7e5
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 32
+  fontSize: 16
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
-  includeFontData: 0
+  includeFontData: 1
   fontName: Retro Gaming
   fontNames:
   - Retro Gaming
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 2
-  ascentCalculationMode: 2
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
-  shouldRoundAdvanceValue: 0
+  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

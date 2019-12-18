@@ -14,7 +14,7 @@ public class moveScript : MonoBehaviour
     public GameObject Colba;
     public float moveX;
     public float moveY;
-
+    GameObject LoadManager;
     public FixedJoystick JStick;// Джойстик
 
     void Start()
@@ -25,11 +25,14 @@ public class moveScript : MonoBehaviour
         //Hero = GetComponent<Animator>();
         Sprite = GetComponent<SpriteRenderer>();
         try{JStick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>(); } catch{ } ;
+        LoadManager = GameObject.Find("LevelMananger");
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
+         
         if(Statistic.Joyst == 1)
         {
         moveX = Input.GetAxis("Horizontal");
@@ -41,9 +44,24 @@ public class moveScript : MonoBehaviour
         moveY = JStick.Vertical;
         }
 
-        if ((Input.GetAxis("Fire1") > 0 || Input.GetAxis("Fire2") > 0 || Input.GetAxis("Fire3") > 0) && Statistic.Joyst == 1)
+        if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter") || Input.GetAxis("Fire1") > 0) && Statistic.Joyst == 1)// button 0
         {
             Throw();
+        }
+
+        if ((Input.GetAxis("Fire2") > 0) && Statistic.Joyst == 1)// button 1
+        {
+            LoadManager.GetComponent<LoadLevel>().LoadFromMenu(1);
+        }
+
+        if ((Input.GetAxis("Fire3") > 0) && Statistic.Joyst == 1)// button 2
+        {
+            LoadManager.GetComponent<LoadLevel>().Load();
+        }
+
+        if ((Input.GetAxis("Fire4") > 0) && Statistic.Joyst == 1)// button 3
+        {
+            GameObject.Find("Canvasv2").GetComponent<IngameInterface>().ChangePointer();
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -96,9 +114,9 @@ public class moveScript : MonoBehaviour
     {
         if (Character.combination[Character.pointer] != 0)
         {
-        Instantiate(Colba, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
-        Hero.SetBool("Attack", true);
-        StartCoroutine(waitAttack());
+            Instantiate(Colba, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            Hero.SetBool("Attack", true);
+            StartCoroutine(waitAttack());
         }
     }
 
@@ -106,5 +124,6 @@ public class moveScript : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Hero.SetBool("Attack", false);
+        GameObject.Find("Canvasv2").GetComponent<IngameInterface>().ChangePointer();
     }
 }

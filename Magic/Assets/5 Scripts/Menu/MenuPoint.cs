@@ -9,6 +9,7 @@ public class MenuPoint : MonoBehaviour
     private Animator Image;
     GameObject LevelMananger;
     Text Text1;
+    static public int idjstk = 0;
     private void Start()
     {
         Image = GetComponent<Animator>();
@@ -32,5 +33,7 @@ public class MenuPoint : MonoBehaviour
         }
         Image.SetBool("Choised", true);
     }
+
+
 
 }

@@ -15,6 +15,7 @@ public class LoadLevel : MonoBehaviour
         Character.hp = 3;
         StartCoroutine(NextLevel(Statistic.thislvl));
     }
+
     public void LoadFromMenu(int lvl) {
         Character.combination = new int[3]; ;
         Statistic.LvlDone = lvl;
