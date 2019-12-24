@@ -14,8 +14,13 @@ public class moveScript : MonoBehaviour
     public GameObject Colba;
     public float moveX;
     public float moveY;
+    public static float LastmoveX;
+    public static float LastmoveY;
     GameObject LoadManager;
     public FixedJoystick JStick;// Джойстик
+
+    public GameObject AimObj;
+    bool IsAim = false;
 
     void Start()
     {
@@ -26,12 +31,13 @@ public class moveScript : MonoBehaviour
         Sprite = GetComponent<SpriteRenderer>();
         try{JStick = GameObject.Find("Fixed Joystick").GetComponent<FixedJoystick>(); } catch{ } ;
         LoadManager = GameObject.Find("LevelMananger");
+        AimObj.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        
          
         if(Statistic.Joyst == 1)
         {
@@ -44,7 +50,21 @@ public class moveScript : MonoBehaviour
         moveY = JStick.Vertical;
         }
 
-        if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter") || Input.GetAxis("Fire1") > 0) && Statistic.Joyst == 1)// button 0
+        try{
+        AimObj.transform.rotation = Quaternion.Euler(0, 0, Degree.GetDegree(moveX, moveY));
+        }
+        catch{}
+
+        if ((Input.GetKeyDown("return") || Input.GetKeyDown("enter") || Input.GetAxis("Fire1") > 0) && Statistic.Joyst == 1)
+        {
+            if (!Character.IsAttackSpell)
+            {
+                return;
+            }
+            Aim();
+        }
+
+        if ((Input.GetKeyUp("return") || Input.GetKeyUp("enter") || Input.GetAxis("Fire1") == 0) && IsAim && Statistic.Joyst == 1)// button 0
         {
             Throw();
         }
@@ -70,7 +90,16 @@ public class moveScript : MonoBehaviour
          }
         if (!Hero.GetBool("Attack"))
         {
-            Rigidbody.velocity = new Vector2(moveX , moveY).normalized *maxSpeed;
+
+            if (!IsAim)
+            {
+                Rigidbody.velocity = new Vector2(moveX, moveY).normalized * maxSpeed;
+            }
+            else
+            {
+                Rigidbody.velocity = Vector2.zero;
+            }
+
             if (moveX == 0 && moveY == 0)
             {
                 Hero.SetInteger("Vector", Hero.GetInteger("Vector"));
@@ -112,12 +141,27 @@ public class moveScript : MonoBehaviour
      
     public void Throw()
     {
+        AimObj.GetComponent<SpriteRenderer>().enabled = false;
+        IsAim = false;
         if (Character.combination[Character.pointer] != 0)
         {
-            Instantiate(Colba, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+            gameObject.GetComponent<SpawnSpell>().Spawn(gameObject);
             Hero.SetBool("Attack", true);
             StartCoroutine(waitAttack());
+
         }
+    }
+
+    public void Aim()
+    {
+        if (!Character.IsAttackSpell)
+        {
+            IsAim = true;
+            return;
+        }
+
+        AimObj.GetComponent<SpriteRenderer>().enabled = true;
+        IsAim = true;
     }
 
     IEnumerator waitAttack()

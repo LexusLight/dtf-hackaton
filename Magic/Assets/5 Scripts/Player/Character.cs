@@ -8,10 +8,15 @@ public class Character : MonoBehaviour
     public static int pointer = 0;
     public static int hp = 3;
     public GameObject[] Objct;
+
+    public static Vector2 ThrowVector;
+    public static Vector2 LineThrowVector;
     public static int ObjIndex;
+    public static bool IsAttackSpell = false;
 
     private void Update()
     {
-        
+        if (combination[pointer] > 6) IsAttackSpell = true; else IsAttackSpell = false;
+        GameObject.Find("HpTracker").GetComponent<Animator>().SetInteger("Hp", hp);
     }
 }

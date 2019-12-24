@@ -11,6 +11,8 @@ TagManager:
   - Imagelvl
   - Point
   - Ghost
+  - Enemy
+  - Spike
   layers:
   - Default
   - TransparentFX
