@@ -6,6 +6,7 @@ public class Character : MonoBehaviour
 {
     public static int[] combination = { 0, 0, 0 };
     public static int pointer = 0;
+    public int maxhp = 3;
     public static int hp = 3;
     public GameObject[] Objct;
 
@@ -18,5 +19,9 @@ public class Character : MonoBehaviour
     {
         if (combination[pointer] > 6) IsAttackSpell = true; else IsAttackSpell = false;
         GameObject.Find("HpTracker").GetComponent<Animator>().SetInteger("Hp", hp);
+    }
+    private void Start()
+    {
+        hp = maxhp;
     }
 }

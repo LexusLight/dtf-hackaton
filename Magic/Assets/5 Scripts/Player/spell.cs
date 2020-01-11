@@ -109,11 +109,13 @@ public class spell : MonoBehaviour
                 break;
             case 4://толкание
                 collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                collision.gameObject.GetComponent<Rigidbody2D>().drag = 1;
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(LineDirection * maxSpeed * 10, ForceMode2D.Impulse);
                 StartCoroutine(WaitStatic(collision));
                 break;
             case 5://магнит
                 collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                collision.gameObject.GetComponent<Rigidbody2D>().drag = 1;
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(-LineDirection * maxSpeed * 10, ForceMode2D.Impulse);
                 StartCoroutine(WaitStatic(collision));
                 break;
@@ -147,6 +149,7 @@ public class spell : MonoBehaviour
                 collision.gameObject.GetComponent<Skeleton>().enabled = false;
                 collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 collision.gameObject.GetComponent<Rigidbody2D>().mass = 10;
+                collision.gameObject.GetComponent<Rigidbody2D>().drag = 1;
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(LineDirection * maxSpeed * 10, ForceMode2D.Impulse);
                 StartCoroutine(WaitStop(collision));
                 break;
@@ -154,6 +157,7 @@ public class spell : MonoBehaviour
                 collision.gameObject.GetComponent<Skeleton>().enabled = false;
                 collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 collision.gameObject.GetComponent<Rigidbody2D>().mass = 10;
+                collision.gameObject.GetComponent<Rigidbody2D>().drag = 1;
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(-LineDirection * maxSpeed * 10, ForceMode2D.Impulse);
                 StartCoroutine(WaitStop(collision));
                 break;
@@ -169,6 +173,7 @@ public class spell : MonoBehaviour
     {
         StartCoroutine(WaitDestroy());
         yield return new WaitForSeconds(0.7f);
+        Col.gameObject.GetComponent<Rigidbody2D>().drag = 7;
         Col.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         Col.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
     }

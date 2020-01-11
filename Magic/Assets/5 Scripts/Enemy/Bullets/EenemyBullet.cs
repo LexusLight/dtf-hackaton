@@ -18,7 +18,11 @@ public class EenemyBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player")) Character.hp--;
+        if (collision.CompareTag("Player")) {
+        Character.hp--;
+        Destroy(gameObject);
+        }
+
     }
 
 

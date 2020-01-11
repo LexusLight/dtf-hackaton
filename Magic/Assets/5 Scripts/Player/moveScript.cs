@@ -59,6 +59,7 @@ public class moveScript : MonoBehaviour
         {
             if (!Character.IsAttackSpell)
             {
+                IsAim = true;
                 return;
             }
             Aim();

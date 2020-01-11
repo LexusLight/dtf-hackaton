@@ -18,6 +18,7 @@ public class Skeleton : MonoBehaviour
     private bool canChange = true;
     bool CanWalk = true;
     GameObject Player;
+    public float Area = 4;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class Skeleton : MonoBehaviour
 
     void Update()
     {
-        if((Vector2.Distance(gameObject.transform.position, Player.transform.position) < 5)&& !Attack)
+        if((Vector2.Distance(gameObject.transform.position, Player.transform.position) < Area) && !Attack)
         {
             CanWalk = false;
             Rigi.velocity = Vector2.zero;
@@ -121,9 +122,9 @@ public class Skeleton : MonoBehaviour
         Anim.speed = 0;
         yield return new WaitForSeconds(1f);
         Anim.SetBool("Attack", false);
+        CanWalk = true;
         yield return new WaitForSeconds(2f);
         Attack = false;
-        CanWalk = true;
     }
 
     IEnumerator ChangeV()
@@ -135,8 +136,9 @@ public class Skeleton : MonoBehaviour
         CanWalk = true;
     }
 
-    void Die()
+    public void Die()
     {
-        Instantiate(Treasure,gameObject.transform);
+        Instantiate(Treasure,gameObject.transform.position,Quaternion.identity);
+        Destroy(gameObject);
     }
 }
