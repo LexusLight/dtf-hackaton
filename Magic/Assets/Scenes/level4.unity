@@ -33629,26 +33629,6 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 6697229072944564075, guid: 466c44b5cd493d84b8cd3ed432c15fcf,
         type: 3}
-      propertyPath: m_Color.r
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697229072944564075, guid: 466c44b5cd493d84b8cd3ed432c15fcf,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697229072944564075, guid: 466c44b5cd493d84b8cd3ed432c15fcf,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697229072944564075, guid: 466c44b5cd493d84b8cd3ed432c15fcf,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697229072944564075, guid: 466c44b5cd493d84b8cd3ed432c15fcf,
-        type: 3}
       propertyPath: m_Tiles.Array.data[1394].second.m_TileIndex
       value: 6
       objectReference: {fileID: 0}
@@ -42975,7 +42955,7 @@ Tilemap:
   - m_RefCount: 99
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.7248576, g: 0.8482111, b: 0.8584906, a: 1}
+  m_Color: {r: 0.48235294, g: 0.48235294, b: 0.48235294, a: 1}
   m_Origin: {x: -21, y: -16, z: 0}
   m_Size: {x: 52, y: 33, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}

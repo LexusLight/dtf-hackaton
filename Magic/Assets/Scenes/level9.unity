@@ -33808,26 +33808,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: a4b81098aec0d2a418f10313905074b8,
         type: 2}
-    - target: {fileID: 6697229072944564075, guid: 466c44b5cd493d84b8cd3ed432c15fcf,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697229072944564075, guid: 466c44b5cd493d84b8cd3ed432c15fcf,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697229072944564075, guid: 466c44b5cd493d84b8cd3ed432c15fcf,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697229072944564075, guid: 466c44b5cd493d84b8cd3ed432c15fcf,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 466c44b5cd493d84b8cd3ed432c15fcf, type: 3}
 --- !u!1001 &755601925
@@ -35342,7 +35322,7 @@ Tilemap:
   - m_RefCount: 107
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.7248576, g: 0.8482111, b: 0.8584906, a: 1}
+  m_Color: {r: 0.48235294, g: 0.48235294, b: 0.48235294, a: 1}
   m_Origin: {x: -12, y: -16, z: 0}
   m_Size: {x: 43, y: 26, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}

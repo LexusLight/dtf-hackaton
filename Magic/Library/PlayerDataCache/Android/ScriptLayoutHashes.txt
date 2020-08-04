@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/GitHub/dtf-hackaton/Magic/AlchemyCatDemo.apk
+C:/Users/Владелец/Desktop/alchemy222.apk
 SceneListBegin?
 Assets/Scenes/0Menu.unity
 Assets/Scenes/1Levelmap.unity
