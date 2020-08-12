@@ -130,7 +130,7 @@ public class SpellItem : MonoBehaviour
                 Ren.color = new Color(1, 1, 1, bright);
                 yield return new WaitForSeconds(0.01f);
             }
-            Destroy(Table);
+            try { Destroy(Table); } catch { }
         }
         finally
         {  }

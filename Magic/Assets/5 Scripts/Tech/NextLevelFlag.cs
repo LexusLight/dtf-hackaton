@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class NextLevel : MonoBehaviour
+public class NextLevelFlag : MonoBehaviour
 {
-    public int NumScene;
+    private GameObject great;
+
+    private void Awake()
+    {
+        great = GameObject.Find("Great");
+        great.SetActive(false);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -19,11 +25,15 @@ public class NextLevel : MonoBehaviour
     public IEnumerator NextLevel1()
     {
         Image image = GameObject.Find("Imagelvl").GetComponent<Image>();
-        for (float bright = 0; bright < 1; bright += Time.deltaTime)
+        great.SetActive(true);
+
+        for (float bright = 0; bright < 1; bright += Time.deltaTime*2)
         {
             image.color = new Color(0, 0, 0, bright);
             yield return new WaitForSeconds(0.005f);
         }
+
+
         if (PlayerPrefs.GetInt("lvl") < 1)
         {
             PlayerPrefs.SetInt("lvl", 2);
@@ -34,6 +44,6 @@ public class NextLevel : MonoBehaviour
             PlayerPrefs.SetInt("lvl", Statistic.LvlDone+1);
             PlayerPrefs.Save();
         }
-        SceneManager.LoadScene(NumScene);//внимание
+        //SceneManager.LoadScene(NumScene);//внимание
     }
 }
