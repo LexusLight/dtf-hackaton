@@ -33952,16 +33952,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5758921117791154928, guid: 8ee28e54cc07cd448b7d37d9dc1bd4b0,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5758921117791154928, guid: 8ee28e54cc07cd448b7d37d9dc1bd4b0,
-        type: 3}
-      propertyPath: m_ChunkCullingBounds.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5758921117791154929, guid: 8ee28e54cc07cd448b7d37d9dc1bd4b0,
         type: 3}
       propertyPath: m_Tiles.Array.size
@@ -55237,6 +55227,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[3].m_Data
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758921117791154928, guid: 8ee28e54cc07cd448b7d37d9dc1bd4b0,
+        type: 3}
+      propertyPath: m_ChunkCullingBounds.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5758921117791154928, guid: 8ee28e54cc07cd448b7d37d9dc1bd4b0,
+        type: 3}
+      propertyPath: m_ChunkCullingBounds.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee28e54cc07cd448b7d37d9dc1bd4b0, type: 3}

@@ -16,6 +16,7 @@ public class moveScript : MonoBehaviour
     public float moveY;
     public static float LastmoveX;
     public static float LastmoveY;
+    public bool stop = false;
     GameObject LoadManager;
     public FixedJoystick JStick;// Джойстик
 
@@ -37,7 +38,7 @@ public class moveScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
+        if (stop) return;
          
         if(Statistic.Joyst == 1)
         {
@@ -170,5 +171,12 @@ public class moveScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Hero.SetBool("Attack", false);
         GameObject.Find("Canvasv2").GetComponent<IngameInterface>().ChangePointer();
+    }
+
+    public void punch()
+    {
+        Vector2 vel = Rigidbody.velocity;
+        Rigidbody.velocity = Vector2.zero;
+        Rigidbody.AddForce(-vel * 2 , ForceMode2D.Impulse);
     }
 }
