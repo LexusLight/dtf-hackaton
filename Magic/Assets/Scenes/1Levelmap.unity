@@ -1010,10 +1010,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a090e81da76e747ac054dc820f40e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeysObj: {fileID: 0}
-  StarsObj: {fileID: 0}
+  KeysObj: {fileID: 1506463513}
   keyinfo: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
-  starsinfo: 0000000000000000
+  starsinfo: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &218500305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,6 +1188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: NameLvl
       value: Spikes Spikes Spikes
+      objectReference: {fileID: 0}
+    - target: {fileID: 585761032795884876, guid: 46630ccc37615c949a5cfb26951dffa0,
+        type: 3}
+      propertyPath: countstars
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46630ccc37615c949a5cfb26951dffa0, type: 3}
@@ -2317,11 +2321,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 810191811}
     m_Modifications:
-    - target: {fileID: 7278661629581735734, guid: cf06a8e3fd8422d469d9d9050aba92e8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7187347807892090601, guid: cf06a8e3fd8422d469d9d9050aba92e8,
         type: 3}
       propertyPath: m_Name
@@ -2432,6 +2431,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7278661629581735734, guid: cf06a8e3fd8422d469d9d9050aba92e8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9031015657986001625, guid: cf06a8e3fd8422d469d9d9050aba92e8,
         type: 3}
       propertyPath: m_IsActive
@@ -2525,7 +2529,7 @@ GameObject:
   - component: {fileID: 878749882}
   - component: {fileID: 878749881}
   m_Layer: 5
-  m_Name: 'Text '
+  m_Name: CountKeys
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2581,7 +2585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0/1
+  m_Text: x0
 --- !u!222 &878749882
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2602,7 +2606,7 @@ GameObject:
   - component: {fileID: 889841150}
   - component: {fileID: 889841149}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CountStars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5064,6 +5068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: NameLvl
       value: Black Trouble
+      objectReference: {fileID: 0}
+    - target: {fileID: 585761032795884876, guid: 46630ccc37615c949a5cfb26951dffa0,
+        type: 3}
+      propertyPath: countstars
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46630ccc37615c949a5cfb26951dffa0, type: 3}

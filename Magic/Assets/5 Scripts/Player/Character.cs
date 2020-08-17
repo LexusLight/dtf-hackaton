@@ -106,6 +106,9 @@ public class Character : MonoBehaviour
         GameObject.Find("StarsText").GetComponent<Text>().text = "x" + stars;
         GameObject.Find("KeysText").GetComponent<Text>().text = "x" + keys;
 
+        PlayerPrefs.SetInt("stars" + Statistic.thislvl.ToString(), (PlayerPrefs.GetInt("stars" + Statistic.thislvl.ToString())<stars? stars : PlayerPrefs.GetInt("stars" + Statistic.thislvl.ToString())));
+        PlayerPrefs.Save();
+
         for (float bright = 0; bright < 1; bright += Time.deltaTime * 2)
         {
             image.color = new Color(0, 0, 0, bright);
@@ -123,6 +126,8 @@ public class Character : MonoBehaviour
             PlayerPrefs.SetInt("lvl", Statistic.LvlDone + 1);
             PlayerPrefs.Save();
         }
+
+
         //SceneManager.LoadScene(NumScene);//внимание
     }
 }

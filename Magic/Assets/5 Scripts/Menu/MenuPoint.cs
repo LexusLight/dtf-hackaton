@@ -5,6 +5,7 @@ public class MenuPoint : MonoBehaviour
 
 {
     public int Id;
+    public int countstars = 3;
     public string NameLvl;
     private Animator Image;
     GameObject LevelMananger;
@@ -19,6 +20,7 @@ public class MenuPoint : MonoBehaviour
     private void OnMouseDown()
     {
         if (Id > Statistic.lvl) return;
+        GameObject.Find("CountStars").GetComponent<Text>().text = GameObject.Find("LevelMananger").GetComponent<KeysAndStars>().starsinfo[Id].ToString() + "/" + countstars.ToString(); //Я лентяй и мне лень писать читаемый код
         Text1.text = NameLvl;
         Statistic.thislvl = Id;
         if (Image.GetBool("Choised")){
