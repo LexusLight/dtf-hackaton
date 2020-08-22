@@ -92,6 +92,7 @@ public class spell : MonoBehaviour
     private void BlockTrigger(int TypePotion, Collider2D collision) //Если мы сталкиваемся с блоком
     {
         gameObject.GetComponent<Animator>().SetBool("Broke", true);
+        gameObject.GetComponent<Collider2D>().enabled = false;
         CanDo = false;
         switch (TypePotion)
         {
@@ -130,6 +131,7 @@ public class spell : MonoBehaviour
     private void EnemyTrigger(int TypePotion, Collider2D collision) //если мы сталкиваемся со врагом ДОПИЛИТЬ!
     {
         gameObject.GetComponent<Animator>().SetBool("Broke", true);
+        gameObject.GetComponent<Collider2D>().enabled = false;
         CanDo = false;
         switch (TypePotion)
         {

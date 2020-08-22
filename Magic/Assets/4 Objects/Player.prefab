@@ -395,6 +395,7 @@ MonoBehaviour:
   Colba: {fileID: 7276279033641816699, guid: a20a82500e6306e4fa7a1d8bd6b677bf, type: 3}
   moveX: 0
   moveY: 0
+  stop: 0
   JStick: {fileID: 0}
   AimObj: {fileID: 929722535756925645}
 --- !u!50 &1047646255995622103
@@ -430,10 +431,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e74a0221b541e4fae3a9322401051c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxhp: 3
   Objct:
   - {fileID: 5640480069535230626, guid: b4e52071c8bf75543ba3802c1e78b8ea, type: 3}
   - {fileID: 5640480069535230626, guid: b4e52071c8bf75543ba3802c1e78b8ea, type: 3}
   - {fileID: 5640480069535230626, guid: b4e52071c8bf75543ba3802c1e78b8ea, type: 3}
+  stars: 0
+  keys: 0
 --- !u!70 &4246598509521838929
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
