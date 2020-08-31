@@ -101,12 +101,15 @@ public class spell : MonoBehaviour
                 StartCoroutine(WaitDestroy());
                 break;
             case 2://добавление
-
+                //Instantiate(GameObject.Find("Player").GetComponent<Character>().Objct[0], collision.gameObject.transform.position, Quaternion.identity);
+                //Destroy(collision.gameObject);
+                //StartCoroutine(WaitDestroy()); это превращение
                 break;
-            case 3://превращение
-                Instantiate(GameObject.Find("Player").GetComponent<Character>().Objct[0], collision.gameObject.transform.position, Quaternion.identity);
-                Destroy(collision.gameObject);
-                StartCoroutine(WaitDestroy());
+            case 3://смена местами
+                Vector2 pos1 = GameObject.Find("Player").transform.position;
+                Vector2 pos2 = collision.transform.position;
+                GameObject.Find("Player").transform.position = pos2;
+                collision.transform.position = pos1;
                 break;
             case 4://толкание
                 collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
@@ -120,7 +123,7 @@ public class spell : MonoBehaviour
                 collision.gameObject.GetComponent<Rigidbody2D>().AddForce(-LineDirection * maxSpeed * 10, ForceMode2D.Impulse);
                 StartCoroutine(WaitStatic(collision));
                 break;
-            case 6://магнит
+            case 6://призрак
                 collision.gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                 collision.gameObject.GetComponent<SpriteRenderer>().color = new Color(collision.gameObject.GetComponent<SpriteRenderer>().color.r, collision.gameObject.GetComponent<SpriteRenderer>().color.g, collision.gameObject.GetComponent<SpriteRenderer>().color.b, 0.5f);
                 collision.gameObject.tag = "Ghost";

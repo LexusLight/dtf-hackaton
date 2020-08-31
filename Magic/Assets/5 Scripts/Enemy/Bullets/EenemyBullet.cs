@@ -19,8 +19,9 @@ public class EenemyBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) {
-        Character.hp--;
-        Destroy(gameObject);
+            Character.hp--;
+            gameObject.GetComponent<Collider2D>().enabled = false;
+            StartCoroutine(Player.GetComponent<Character>().Damaged(gameObject,false));
         }
 
     }

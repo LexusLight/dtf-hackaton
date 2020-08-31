@@ -43845,11 +43845,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1047646255995622099, guid: a06f16e392f181a479822c843f253ec9,
         type: 3}
-      propertyPath: maxSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1047646255995622099, guid: a06f16e392f181a479822c843f253ec9,
-        type: 3}
       propertyPath: JStick
       value: 
       objectReference: {fileID: 1121304444}
@@ -43861,7 +43856,7 @@ PrefabInstance:
     - target: {fileID: 1047646255995622096, guid: a06f16e392f181a479822c843f253ec9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.006
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 1047646255995622096, guid: a06f16e392f181a479822c843f253ec9,
         type: 3}

@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   x: 4
-  y: 5
+  y: 7
 --- !u!61 &6848485507099656792
 BoxCollider2D:
   m_ObjectHideFlags: 0

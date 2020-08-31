@@ -19,7 +19,7 @@ public class IngameInterface : MonoBehaviour
         if (Character.combination[0] == 0 && Character.combination[1] == 0 && Character.combination[2] == 0) return;
         Character.pointer = (Character.pointer == 2) ? 0 : Character.pointer + 1;
         SpellItem.PointerColor();
-        GameObject.Find("Pointer").GetComponent<Text>().text = (Character.pointer + 1).ToString();
+        GameObject.Find("Pointer").GetComponent<Text>().text = (Character.pointer + 1).ToString()+"/3";
         if (Character.combination[Character.pointer] == 0) ChangePointer();
     }
 

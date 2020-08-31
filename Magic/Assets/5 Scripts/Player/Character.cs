@@ -47,7 +47,7 @@ public class Character : MonoBehaviour
         hp = maxhp;
     }
 
-    public IEnumerator Damaged(GameObject obj = null)
+    public IEnumerator Damaged(GameObject obj = null, bool stop = true)
     {
         if (hp < 1 && !lose)
         {
@@ -59,7 +59,8 @@ public class Character : MonoBehaviour
             transform.Rotate(0, 0, 90f);
         }
         gameObject.GetComponent<moveScript>().punch();
-        gameObject.GetComponent<moveScript>().stop = true;
+        gameObject.GetComponent<moveScript>().stop = stop;
+        gameObject.GetComponent<moveScript>().stop = (lose == false) ? stop : true;
         yield return new WaitForSeconds(0.2f);
         rend.color = new Color(1f, 1f, 1f, 0.5f);
         yield return new WaitForSeconds(0.2f);

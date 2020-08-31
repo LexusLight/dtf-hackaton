@@ -67,7 +67,7 @@ public class SpellItem : MonoBehaviour
                         Image.color = Color.white;
                         break;
                     }
-                    GameObject.Find("Pointer").GetComponent<Text>().text = (Character.pointer + 1).ToString();
+                    GameObject.Find("Pointer").GetComponent<Text>().text = (Character.pointer + 1).ToString() + "/3";
                 }
             catch { }
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
