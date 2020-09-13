@@ -10,7 +10,8 @@ public class Character : MonoBehaviour
     public int maxhp = 3;
     public static int hp = 3;
     public GameObject[] Objct;
-    bool lose = false;
+    public bool lose = false;
+    public bool noflag = false;
     Animator hpObj;
     Animator anim;
     SpriteRenderer rend;
@@ -40,6 +41,10 @@ public class Character : MonoBehaviour
     {
         if (combination[pointer] > 6) IsAttackSpell = true; else IsAttackSpell = false;
         hpObj.SetInteger("Hp", hp);
+        if(noflag && !lose)
+        {
+            StartCoroutine(YouLoseLevel());
+        }
         
     }
     private void Start()
@@ -85,6 +90,7 @@ public class Character : MonoBehaviour
     public IEnumerator YouLoseLevel()
     {
         anim.speed = 0;
+        GameObject.Find("Player").GetComponent<moveScript>().stop = true;
         lose = true;
         yield return new WaitForSeconds(2f);
         Image image = GameObject.Find("Imagelvl").GetComponent<Image>();

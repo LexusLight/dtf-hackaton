@@ -10,9 +10,15 @@ public class NextLevelFlag : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Character.combination = new int[3];
-            Character.hp = 3;
+            //Character.hp = Character.hp;
             StartCoroutine(collision.gameObject.GetComponent<Character>().NextLevel1());
         }
+    }
+
+    private void OnDestroy()
+    {
+        GameObject.Find("Player").GetComponent<Character>().noflag = true;
+        
     }
 
 }

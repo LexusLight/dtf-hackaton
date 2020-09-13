@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 879270652373163328}
   - component: {fileID: 879270652373163330}
   - component: {fileID: 7592184825604423019}
-  - component: {fileID: 5545686187572735726}
   - component: {fileID: 50709035255377144}
+  - component: {fileID: 3482311511386487331}
   m_Layer: 0
   m_Name: Spell (5)
   m_TagString: Potion
@@ -132,32 +132,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 4
   y: 7
---- !u!61 &5545686187572735726
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 879270652373163390}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0015151501, y: 0.032605767}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.47307062, y: 0.46899343}
-  m_EdgeRadius: 0
 --- !u!50 &50709035255377144
 Rigidbody2D:
   serializedVersion: 4
@@ -179,3 +153,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &3482311511386487331
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879270652373163390}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0033597946, y: 0.039984226}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.668602, y: 0.69035053}
+  m_EdgeRadius: 0
