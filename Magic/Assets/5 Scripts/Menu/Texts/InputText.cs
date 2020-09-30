@@ -14,7 +14,7 @@ public class InputText : MonoBehaviour
     {
         text = gameObject.GetComponent<Text>();
         str = (Texts.Language == 1) ? Texts.Ru[string_num] : Texts.Eng[string_num];
-        if(!timer) text.text = str;
+        
     }
 
     public void OnEnable()
@@ -22,6 +22,10 @@ public class InputText : MonoBehaviour
         if (timer)
         {
             StartCoroutine(InputWithTime(str));
+        }
+        else
+        {
+            text.text = str;
         }
     }
 
