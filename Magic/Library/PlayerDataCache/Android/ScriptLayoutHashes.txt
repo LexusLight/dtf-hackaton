@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-C:/Users/Владелец/Desktop/alchemyCat.apk
+C:/Users/kosty/OneDrive/Рабочий стол/Stuff/builds/Alchemycat.apk
 SceneListBegin?
 Assets/Scenes/0Menu.unity
 Assets/Scenes/1Levelmap.unity
@@ -14,6 +14,13 @@ Assets/Scenes/level8.unity
 Assets/Scenes/level9.unity
 Assets/Scenes/level10.unity
 Assets/Scenes/level11.unity
+Assets/Scenes/level12.unity
+Assets/Scenes/level13.unity
+Assets/Scenes/level14.unity
+Assets/Scenes/level15.unity
+Assets/Scenes/level16.unity
+Assets/Scenes/level17.unity
+Assets/Scenes/level18.unity
 SceneListEnd?
 ce669872a2be11bc686ea22961d8a3bb Assembly-CSharp.dll:.Joystick
 3c08375166df118bd1801438fc36b92f Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
@@ -66,7 +73,7 @@ aa165095bcf0f4d99594ea33df01c81b UnityEngine.UI.dll:UnityEngine.UI.Slider
 0fd6822f6177297bd0eb4d83cc7a9030 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-228dbce98e2ca5b993362c77a417d24d Assembly-CSharp.dll:.Character
+121b0f00e402890f181ec696a500c4e7 Assembly-CSharp.dll:.Character
 d3c76b14a25eebd3a3323dd43297919c Unity.TextMeshPro.dll:TMPro.TMP_InputField
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -133,9 +140,8 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Spike
 e33faccfdead98cad1a5f1039fea5634 Assembly-CSharp.dll:.moveScript
-303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
-7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 2eefb21d67b98b4b4f01f1afcfa280a8 Assembly-CSharp.dll:.SpawnSpell
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Texts
 07eaf3bcdb99be7691274f2761550154 Assembly-CSharp.dll:GGEZ.PerfectPixelCamera
 b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
 d8d0fe6251eda9aa601346a425a79aab Assembly-CSharp.dll:.Skeleton
@@ -144,8 +150,7 @@ ce669872a2be11bc686ea22961d8a3bb Assembly-CSharp.dll:.FloatingJoystick
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.NextLevelOnCanvas
 afc5b93a7b192de2dcb3832fe35a5c7e Assembly-CSharp.dll:.EenemyBullet
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Star
-71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
+fb9e55080a3800d9758abc1863843c19 Assembly-CSharp.dll:.Star
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 b94944beb772f8a252024a68c8e25f5c Assembly-CSharp.dll:.LoadLevel
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PotionBroke
@@ -194,7 +199,10 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 507174d46dacbc5fe45e28485db5dd1e Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 528e9858840cb8370d93939fff6b42d9 Assembly-CSharp.dll:.JoystickPlayerExample
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+c297eb6df6d33c5febd8b4513bed0bc7 Assembly-CSharp.dll:.InputText
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Plant
+fdcf104be7ba0927410e969262bb6e09 Assembly-CSharp.dll:.AudioSystem
+d64a489d5109368c6179d105fed959b2 Assembly-CSharp.dll:.AudioMass
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 b3795e461bc0225dabe3c01499c8cada Assembly-CSharp.dll:.MenuCamera
 df434544c9f7b33d1cc7e635b180d279 Unity.TextMeshPro.dll:TMPro.TextMeshPro
