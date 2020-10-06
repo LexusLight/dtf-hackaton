@@ -173,10 +173,15 @@ public class moveScript : MonoBehaviour
         GameObject.Find("Canvasv2").GetComponent<IngameInterface>().ChangePointer();
     }
 
-    public void punch()
+    public void punch(Vector2 vec)
     {
         Vector2 vel = Rigidbody.velocity;
         Rigidbody.velocity = Vector2.zero;
         Rigidbody.AddForce(-vel * 2 , ForceMode2D.Impulse);
+        if(vec != null)
+        {
+            Rigidbody.velocity = Vector2.zero;
+            Rigidbody.AddForce(-vec * 2, ForceMode2D.Impulse);
+        }
     }
 }

@@ -63,7 +63,7 @@ public class Character : MonoBehaviour
         {
             transform.Rotate(0, 0, 90f);
         }
-        gameObject.GetComponent<moveScript>().punch();
+        gameObject.GetComponent<moveScript>().punch(gameObject.GetComponent<Rigidbody2D>().velocity);
         gameObject.GetComponent<moveScript>().stop = stop;
         gameObject.GetComponent<moveScript>().stop = (lose == false) ? stop : true;
         yield return new WaitForSeconds(0.2f);

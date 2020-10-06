@@ -13,6 +13,7 @@ TagManager:
   - Ghost
   - Enemy
   - Spike
+  - MechaSpike
   layers:
   - Default
   - TransparentFX

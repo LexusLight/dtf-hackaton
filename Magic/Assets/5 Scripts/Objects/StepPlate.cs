@@ -9,10 +9,12 @@ public class StepPlate : MonoBehaviour
     public GameObject[] Objects;
     private byte count = 0;
     private Animator anim;
+    private BoxCollider2D col;
 
     private void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
+        col = gameObject.GetComponent<BoxCollider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,7 +40,7 @@ public class StepPlate : MonoBehaviour
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Block")
         {
             count--;
-            if (count <= 0)
+            if (count <= 0 && (collision.gameObject.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic))
             {
                 anim.SetBool("Active", false);
                 foreach (GameObject obj in Objects)
