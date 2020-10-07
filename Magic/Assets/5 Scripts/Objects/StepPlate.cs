@@ -29,7 +29,8 @@ public class StepPlate : MonoBehaviour
             foreach (GameObject spike in Spikes)
             {
                 spike.GetComponent<Animator>().SetBool("Active", false);
-                spike.GetComponent<Collider2D>().isTrigger = true;
+                //spike.GetComponent<Collider2D>().isTrigger = true;
+                spike.GetComponent<Collider2D>().enabled = false;
             }
 
         }
@@ -51,6 +52,7 @@ public class StepPlate : MonoBehaviour
                 {
                     spike.GetComponent<Animator>().SetBool("Active", true);
                     spike.GetComponent<Collider2D>().isTrigger = false;
+                    spike.GetComponent<Collider2D>().enabled = true;
                 }
             }
         }
