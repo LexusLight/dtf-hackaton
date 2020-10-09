@@ -9,6 +9,7 @@ public class Star : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Potion" || collision.gameObject.tag == "Block")
         {
+            if (collision.gameObject.tag == "Potion" && collision.gameObject.GetComponent<spell>().CanDo == false) return;
             GameObject.Find("Player").GetComponent<Character>().stars++;
             particle.SetActive(true);
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
