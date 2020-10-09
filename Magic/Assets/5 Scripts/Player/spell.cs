@@ -15,7 +15,7 @@ public class spell : MonoBehaviour
     Character Ch;
     int TypePotion;
     int Vector;
-    bool CanDo = true;
+    public bool CanDo = true;
 
     void Start()
     {
